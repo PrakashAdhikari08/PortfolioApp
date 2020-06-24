@@ -3,14 +3,18 @@
     font-style: normal;
     font: medium;
     font-weight: bold;
-    color: white;
+    color:rgb(165, 111, 201);
 }
 
 .h3color{
     font-size: 20px;
     font-style: oblique;
-    color: white;
-    margin: 5px;
+    color: rgb(24, 11, 11);
+    margin: 15px;
  
 
+}
+.formSize{
+
+    font-style: italic;
 }
