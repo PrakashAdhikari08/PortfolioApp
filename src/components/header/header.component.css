@@ -1,3 +1,8 @@
+.modalSetup{
+    margin-left: 35%;
+    width: 30%;
+    
+}
 .brandText{
     font-size: medium;
     font-style: normal;
@@ -17,4 +22,27 @@
 .formSize{
 
     font-style: italic;
+    
 }
+
+.input-container{
+   
+    display: flex;
+    align-items: center;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    
+}
+.input-container input{
+    outline: none;
+    width: 100%;
+    border: 0;
+    
+
+}
+.input-container svg{
+  margin: 0 10px;  
+  color: #aaa;
+  
+}
+
