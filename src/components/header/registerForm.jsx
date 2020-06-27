@@ -4,7 +4,7 @@ import './header.component.css'
 import { Link } from 'react-router-dom';
 import * as Yup from "yup";
 import { useFormik } from "formik";
-import Register from './registerForm';
+import LoginForm from './loginForm';
 
 const initialValues = {
     username: "",
@@ -22,9 +22,9 @@ const initialValues = {
       .required("Username is requied"),
     password: Yup.string().required("Password Required"),
   });
+  
 
-
-const LoginForm = (props) => {
+const Register = (props) => {
 
     const formik = useFormik({
         initialValues,
@@ -32,8 +32,8 @@ const LoginForm = (props) => {
         validationSchema,
       });
 
-    const [modal, setModal] = useState(false);
-    const [register, setRegister] = useState(false);
+    const [modal, setModal] = useState(props.register);
+    
     const [pwType, setPwType] = useState("password");
 
     const [passwordVisible, setPasswordVisible] = useState(false);
@@ -49,38 +49,19 @@ const LoginForm = (props) => {
       setPwType("password");
       
     }
-    
-    const isLoginClicked =()=>{
-      setModal(!modal);
-      setRegister(false);
-    }
-
 
     const isCancelClicked = ()=> {
-        setModal(!modal);
-        initialValues.username = "";
-        initialValues.password = "";
-        console.log(initialValues)
+        setModal(false);
+       
     }
-    const isRegisterClicked = ()=> {
-      setModal(!modal);
-      setRegister(!register);
+   
       
-  }
- 
+  
     return (
-
         <div>
-          
-            <Button className="btn btn-warning" onClick={isLoginClicked}>Code With Max</Button>
-            {console.log("here")}
-            {register?
-            <Register register={register}/>
-          :""}
-           
-                <Modal  style={{"width": "30%"}}show={modal} onHide={isLoginClicked} className=" modalSetup">
+                <Modal  style={{"width": "30%"}}show={modal} onHide={isCancelClicked} className=" modalSetup">
                     <Modal.Header>
-                    <Modal.Title style={{"fontStyle":"italic"}}>Please Login To Start Learning</Modal.Title>
+                    <Modal.Title style={{"fontStyle":"italic"}}>Register Form</Modal.Title>
                     </Modal.Header>
                     <form className="formSize" onSubmit={formik.handleSubmit}>
                         <Modal.Body>
@@ -135,9 +116,7 @@ const LoginForm = (props) => {
                                     Remember Me</label>
                              </div>
 
-                             <div>
-                                 <label>Don't have account. <Link onClick={isRegisterClicked}>Click </Link>to register</label>
-                             </div>
+                            
                               
                         </Modal.Body>
 
@@ -161,4 +140,4 @@ const LoginForm = (props) => {
  
 
  
-export default LoginForm;
+export default Register;

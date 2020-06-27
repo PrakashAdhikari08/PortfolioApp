@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 import './footer.component.css'
 const Footer = () => {
     return ( 
-       
-        <div className="jumbotron">
+       <>
+        <div className="jumbotron footer-container">
             
-            <div className="row ">
+            <div className="row  justify-content-center">
                 <div className="col ">
                 <h2><span className="badge badge-info">Social</span></h2>
                 <ul>
@@ -48,6 +48,8 @@ const Footer = () => {
                             <h6>Copyright@Code&Max 2020 All rights.</h6>
                 </div>
         </div>
+        
+        </>
      );
 }
  

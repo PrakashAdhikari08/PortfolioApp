@@ -1,5 +1,10 @@
+.home-container{
+  
+        background: #ffff;
+    
+    
+}
 .positonTop{
-    margin-top: 80px;
 }
 .h1{
     text-align: left;
@@ -10,4 +15,14 @@
 
 .pText{
     font-style: italic;
+    font: bold;
+    font-size: 20px;
 }
+
+.row-container{
+    background-image: url("/images/back1.jpg");
+    background-size: cover;
+    
+}
+
+

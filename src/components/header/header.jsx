@@ -7,7 +7,7 @@ import LoginForm from './loginForm'
 const Header = () => {
     return (  
 
-        <nav className= "navbar fixed-top bg-light navbar-expand-lg">
+        <nav className= "navbar fixed-top navbar-expand-lg nav-container">
             
                     <Link className="navbar-brand brandText" to="/home">CODE@MAX</Link>
                     <div className = "collapse navbar-collapse justify-content-center">
