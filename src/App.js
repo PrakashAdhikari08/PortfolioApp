@@ -6,20 +6,12 @@ import {BrowserRouter as Router} from 'react-router-dom'
 import Footer from './components/footer/footer';
 import Home from './components/body/homepage/home';
 import './index.css'
+import Routing from './appRouting/appRouting';
 
 function App() {
   return (
-    <div className="App container-fluid app-container">
-      <Router>
-
-      <Header/>
-      <Home/>
-      <Footer/>
-      
-
-      </Router>
-     
-    
+    <div className="App  app-container">
+      <Routing/>
     </div>
   );
 }

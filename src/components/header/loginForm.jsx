@@ -33,6 +33,7 @@ const LoginForm = (props) => {
       });
 
     const [modal, setModal] = useState(false);
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
     const [register, setRegister] = useState(false);
     const [pwType, setPwType] = useState("password");
 
@@ -71,16 +72,18 @@ const LoginForm = (props) => {
     return (
 
         <div>
-          
-            <Button className="btn btn-warning" onClick={isLoginClicked}>Code With Max</Button>
+            {isLoggedIn?
+            <Button className="btn btn-success" >LogOut</Button>
+            :<Button className="btn btn-warning" onClick={isLoginClicked}>Code With Max</Button>
+            }
             {console.log("here")}
             {register?
             <Register register={register}/>
           :""}
            
                 <Modal  style={{"width": "30%"}}show={modal} onHide={isLoginClicked} className=" modalSetup">
-                    <Modal.Header>
-                    <Modal.Title style={{"fontStyle":"italic"}}>Please Login To Start Learning</Modal.Title>
+                    <Modal.Header className="justify-content-center">
+                    <Modal.Title style={{"fontStyle":"italic"}}>Login Form</Modal.Title>
                     </Modal.Header>
                     <form className="formSize" onSubmit={formik.handleSubmit}>
                         <Modal.Body>

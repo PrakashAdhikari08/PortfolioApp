@@ -3,7 +3,7 @@ import './footer.component.css'
 const Footer = () => {
     return ( 
        <>
-        <div className="jumbotron footer-container">
+        <div className=" jumbotron footer-container">
             
             <div className="row  justify-content-center">
                 <div className="col ">

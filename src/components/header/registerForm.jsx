@@ -8,6 +8,8 @@ import LoginForm from './loginForm';
 
 const initialValues = {
     username: "",
+    firstName:"",
+    lastName:"",
     password: "",
   };
 
@@ -20,6 +22,8 @@ const initialValues = {
     username: Yup.string()
       .email("Invalid Email Address")
       .required("Username is requied"),
+      firstName: Yup.string().required("Enter first Name"),
+      lastName: Yup.string().required("Last Name is Mandatory"),
     password: Yup.string().required("Password Required"),
   });
   
@@ -60,15 +64,41 @@ const Register = (props) => {
     return (
         <div>
                 <Modal  style={{"width": "30%"}}show={modal} onHide={isCancelClicked} className=" modalSetup">
-                    <Modal.Header>
+                    <Modal.Header className="justify-content-center">
                     <Modal.Title style={{"fontStyle":"italic"}}>Register Form</Modal.Title>
                     </Modal.Header>
                     <form className="formSize" onSubmit={formik.handleSubmit}>
                         <Modal.Body>
+                      <div className="row">
+                        <div className="form-group col">
+                            
+                                  <input  size="sm" type="text" name="firstName" className="form-control " 
+                                  placeholder="First Name*"
+                                  {...formik.getFieldProps("firstName")}></input>
+
+                                      {formik.touched.firstName && formik.errors.firstName ? (
+                                      <label size='sm' style={{ color: "red" }}>
+                                      {formik.errors.firstName}
+                                      </label>
+                                  ) : null}
+                            </div> 
+                            <div className="form-group col">
+                                  <input  size="sm" type="text" name="lastName" className="form-control " 
+                                  placeholder="Last Name*"
+                                  {...formik.getFieldProps("lastName")}></input>
+
+                                      {formik.touched.lastName && formik.errors.lastName ? (
+                                      <label size='sm' style={{ color: "red" }}>
+                                      {formik.errors.lastName}
+                                      </label>
+                                  ) : null}
+                            
+                          </div>
+                          </div>
                             <div className="form-group">
                                   
                                     <input  size="sm" type="email" name="username" className="form-control " 
-                                    placeholder="Enter Username"
+                                    placeholder="Enter Username*"
                                     {...formik.getFieldProps("username")}></input>
 
                                         {formik.touched.username && formik.errors.username ? (
@@ -81,7 +111,7 @@ const Register = (props) => {
                             <div className="form-group input-container">
                                  
                                     <input type={pwType} name="password" className="form-control " 
-                                    placeholder="Enter Password"
+                                    placeholder="Enter Password*"
                                     {...formik.getFieldProps("password")}></input>
                                     {passwordVisible?
                                     <Link onClick={noVisibilityClicked}>
@@ -102,22 +132,13 @@ const Register = (props) => {
                                        
                             </div>
                             <div>
-                                        {formik.touched.password && formik.errors.password ? (
-                                        <label size='sm' style={{ color: "red" }}>
-                                        {formik.errors.password}
-                                        </label>
-                                        ) : null} 
-                                        </div>
+                                  {formik.touched.password && formik.errors.password ? (
+                                  <label size='sm' style={{ color: "red" }}>
+                                  {formik.errors.password}
+                                  </label>
+                                  ) : null} 
+                           </div>
                                          
-                                        
-                             <div className="form-group form-check">
-                                    <label class="form-check-label">
-                                    <input type="checkbox" className="form-check-input" ></input>
-                                    Remember Me</label>
-                             </div>
-
-                            
-                              
                         </Modal.Body>
 
                         <Modal.Footer>

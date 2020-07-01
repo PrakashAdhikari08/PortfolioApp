@@ -7,10 +7,10 @@
 }
 .brandText{
     font-size: medium;
-    font-style: normal;
+    font-style: oblique;
     font: medium;
     font-weight: bold;
-    color:rgb(165, 111, 201);
+    color:white;
 }
 
 .h3color{

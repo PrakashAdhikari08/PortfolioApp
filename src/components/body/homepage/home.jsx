@@ -6,7 +6,7 @@ const Home = () => {
         <div class="row jumbotron home-container positonTop row-container">
                 
 
-                <div class="col ">
+                <div class="col text-right ">
                         <br></br>
                         <br></br>
                         <br></br>
